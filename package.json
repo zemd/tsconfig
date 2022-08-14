@@ -5,6 +5,9 @@
   "exports": {
     "./*": "./*"
   },
+  "author": "Dmytro Zelenetskyi <dmytro.zelenetskyi@gmail.com>",
+  "license": "MIT",
+  "keywords": ["typescript", "tsconfig", "react library tsconfig", "next.js tsconfig"],
   "devDependencies": {
     "semantic-release": "^19.0.3"
   },
