@@ -9,7 +9,7 @@
     "semantic-release": "^19.0.3"
   },
   "scripts": {
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release --debug"
   },
   "repository": {
     "type": "git",
