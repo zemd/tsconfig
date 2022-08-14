@@ -17,5 +17,8 @@
   },
   "publishConfig": {
     "access": "restricted"
+  },
+  "release": {
+    "branches": ["main"]
   }
 }
