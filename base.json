@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Default",
+  "compilerOptions": {
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "allowUmdGlobalAccess": false,
+    "noResolve": false,
+    "paths": {},
+    "resolveJsonModule": true,
+    "declaration": true,
+    "declarationMap": true,
+    "downlevelIteration": false,
+    "newLine": "lf",
+    "removeComments": false,
+    "sourceMap": true,
+    "allowJs": false,
+    "checkJs": false,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "composite": true,
+    "incremental": true,
+    "noErrorTruncation": true,
+    "preserveWatchOutput": true,
+    "assumeChangesOnlyAffectDirectDependencies": true
+  },
+  "watchOptions": {
+    "watchFile": "useFsEventsOnParentDirectory",
+    "excludeDirectories": [
+      "**/node_modules",
+      "dist",
+      "tmp"
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
