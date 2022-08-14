@@ -16,6 +16,7 @@
     "url": "https://github.com/zemd/tsconfig.git"
   },
   "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
     "access": "restricted"
   },
   "release": {
