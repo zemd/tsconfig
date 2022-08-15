@@ -38,6 +38,23 @@ Once you run your next.js application it forces updates to `tsconfig.json` addin
 }
 ```
 
+### Next.js emotion integration
+
+This is not limited by emotion but showed up specifically when I was configuring it. Once you extends `tsconfnig-react-next.prod.json`
+a `css` attribute can't be handled and throws error. This can be fixed by adding:
+
+```
+"include": [
+  "next-env.d.ts",
+  "**/*.ts",
+  "**/*.tsx"
+]
+```
+
+into your `tsconfig.json` file. That means that includes are also considered as relative paths in typescript.
+
+ps. also don't forget to add `/// <reference types="@emotion/react/types/css-prop" />` into `next-env.d.ts`
+
 ## License
 
 @zemd/tsconfig is released under the MIT license.
