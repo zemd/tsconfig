@@ -1,15 +1,14 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Next.js dev configuration",
-  "extends": "./base.json",
+  "display": "React Library dev configuration",
+  "extends": "./tsconfig-base.json",
   "compilerOptions": {
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "module": "ESNext",
     "target": "ESNext",
     "moduleResolution": "Node"
   },
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
   ]

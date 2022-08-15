@@ -13,7 +13,7 @@ A collection for different types of projects.
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "My cool app configuration",
-  "extends": "@zemd/tsconfig/react-next.prod.json"
+  "extends": "@zemd/tsconfig/tsconfig-react-next.prod.json"
 }
 ```
 
