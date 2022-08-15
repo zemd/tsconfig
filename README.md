@@ -17,6 +17,11 @@ A collection for different types of projects.
 }
 ```
 
+### Warning
+
+Also you have to set `compilerOptions.outDir`, `compilerOptions.rootDir` and `compilerOptions.baseUrl` explicitly, so it would be clear
+about target destinations. And because `outDir` is considered as relative path by typescript so it must be defined within your tsconfig.
+
 ## Next.js
 
 Once you run your next.js application it forces updates to `tsconfig.json` adding:

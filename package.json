@@ -1,5 +1,6 @@
 {
   "name": "@zemd/tsconfig",
+  "description": "Shared tsconfig for my projects",
   "version": "0.0.0-development",
   "type": "module",
   "exports": {
