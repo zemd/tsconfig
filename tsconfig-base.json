@@ -35,11 +35,12 @@
     "isolatedModules": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "composite": true,
-    "incremental": true,
+    "composite": false,
+    "incremental": false,
     "noErrorTruncation": true,
     "preserveWatchOutput": true,
-    "assumeChangesOnlyAffectDirectDependencies": true
+    "assumeChangesOnlyAffectDirectDependencies": true,
+    "verbatimModuleSyntax": true
   },
   "watchOptions": {
     "watchFile": "useFsEventsOnParentDirectory",

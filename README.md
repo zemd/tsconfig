@@ -1,47 +1,37 @@
 # Default tsconfigs
 
-A collection for different types of projects.
-
-|               | Development | Production |
-|---------------|-------------|------------|
-| React library | Yes         | No         |
-| Next.js       | Yes         | Yes        |  
+- React component library
+- Next.js site
 
 ## Usage
+
+### React component library
+
+```json
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "My cool react library",
+  "extends": "@zemd/tsconfig/tsconfig-react.json"
+}
+```
+
+### Next.js project
 
 ```json
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "My cool app configuration",
-  "extends": "@zemd/tsconfig/tsconfig-react-next.prod.json"
+  "extends": "@zemd/tsconfig/tsconfig-next.json"
 }
 ```
 
 ### Warning
 
-Also you have to set `compilerOptions.outDir`, `compilerOptions.rootDir` and `compilerOptions.baseUrl` explicitly, so it would be clear
-about target destinations. And because `outDir` is considered as relative path by typescript so it must be defined within your tsconfig.
+Also, you have to set `compilerOptions.outDir`, `compilerOptions.rootDir`, and `compilerOptions.baseUrl` options explicitly, so it would be clear about target destinations. And keep in mind that `compilerOptions.outDir` is considered a relative path in Typescript, it must be defined within your tsconfig.
 
-## Next.js
+## Next.js and Emotion.sh integration
 
-Once you run your next.js application it forces updates to `tsconfig.json` adding:
-```json
-{
-  "compilerOptions": {
-    "target": "es5",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "jsx": "preserve",
-    "skipLibCheck": true,
-    "noEmit": true
-  }
-}
-```
-
-### Next.js emotion integration
-
-This is not limited by emotion but showed up specifically when I was configuring it. Once you extends `tsconfnig-react-next.prod.json`
-a `css` attribute can't be handled and throws error. This can be fixed by adding:
+It is not limited by Emotion itself but showed up precisely when I was configuring it. Once you extend `tsconfnig-next.json`, a `css` attribute can't be used and the typechecker throws an error. You can fix it by adding `next-env.d.ts` into the `include` array:
 
 ```
 "include": [
@@ -51,9 +41,7 @@ a `css` attribute can't be handled and throws error. This can be fixed by adding
 ]
 ```
 
-into your `tsconfig.json` file. That means that includes are also considered as relative paths in typescript.
-
-ps. also don't forget to add `/// <reference types="@emotion/react/types/css-prop" />` into `next-env.d.ts`
+That means that `includes` field is also considered as relative paths in typescript.
 
 ## License
 

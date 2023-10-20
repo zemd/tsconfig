@@ -1,9 +1,0 @@
-{
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Next.js prod configuration",
-  "extends": "./tsconfig-react-next.dev.json",
-  "compilerOptions": {
-    "removeComments": true,
-    "sourceMap": false
-  }
-}

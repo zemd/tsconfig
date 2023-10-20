@@ -1,12 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Next.js dev configuration",
+  "display": "Next.js tsconfig",
   "extends": "./tsconfig-base.json",
   "compilerOptions": {
     "jsx": "preserve",
-    "module": "ESNext",
-    "target": "ESNext",
-    "moduleResolution": "Node"
+    "moduleResolution": "Bundler"
   },
   "include": [
     "next-env.d.ts",
