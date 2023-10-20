@@ -2,11 +2,7 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Default",
   "compilerOptions": {
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
-    ],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "exactOptionalPropertyTypes": true,
@@ -44,10 +40,6 @@
   },
   "watchOptions": {
     "watchFile": "useFsEventsOnParentDirectory",
-    "excludeDirectories": [
-      "**/node_modules",
-      "dist",
-      "tmp"
-    ]
+    "excludeDirectories": ["**/node_modules", "dist", "tmp"]
   }
 }

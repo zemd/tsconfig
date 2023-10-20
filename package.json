@@ -1,6 +1,6 @@
 {
   "name": "@zemd/tsconfig",
-  "description": "Shared tsconfig for my projects",
+  "description": "Shared default tsconfig for my projects",
   "version": "1.0.3",
   "type": "module",
   "exports": {
@@ -8,7 +8,12 @@
   },
   "author": "Dmytro Zelenetskyi <dmytro.zelenetskyi@gmail.com>",
   "license": "MIT",
-  "keywords": ["typescript", "tsconfig", "react library tsconfig", "next.js tsconfig"],
+  "keywords": [
+    "typescript",
+    "tsconfig",
+    "react library tsconfig",
+    "next.js tsconfig"
+  ],
   "devDependencies": {
     "semantic-release": "^22.0.5"
   },
@@ -20,6 +25,8 @@
     "url": "https://github.com/zemd/tsconfig.git"
   },
   "release": {
-    "branches": ["main"]
+    "branches": [
+      "main"
+    ]
   }
 }

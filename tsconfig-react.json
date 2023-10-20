@@ -8,8 +8,5 @@
     "target": "ESNext",
     "moduleResolution": "Node"
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx"
-  ]
+  "include": ["**/*.ts", "**/*.tsx"]
 }
