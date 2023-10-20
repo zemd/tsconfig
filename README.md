@@ -5,6 +5,12 @@
 
 ## Usage
 
+### Installation
+
+```sh
+npm install @zemd/tsconfig --save-dev
+```
+
 ### React component library
 
 ```json
