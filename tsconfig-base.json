@@ -2,14 +2,13 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Default",
   "compilerOptions": {
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "exactOptionalPropertyTypes": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
-    "noPropertyAccessFromIndexSignature": true,
+    "noPropertyAccessFromIndexSignature": false,
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -36,7 +35,8 @@
     "noErrorTruncation": true,
     "preserveWatchOutput": true,
     "assumeChangesOnlyAffectDirectDependencies": true,
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force"
   },
   "watchOptions": {
     "watchFile": "useFsEventsOnParentDirectory",

@@ -3,8 +3,12 @@
   "display": "Next.js tsconfig",
   "extends": "./tsconfig-base.json",
   "compilerOptions": {
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "jsx": "preserve",
-    "moduleResolution": "Bundler"
+    "moduleResolution": "Bundler",
+    "module": "Preserve",
+    "noEmit": true,
+    "skipLibCheck": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

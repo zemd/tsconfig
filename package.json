@@ -2,11 +2,6 @@
   "name": "@zemd/tsconfig",
   "description": "Shared default tsconfig for my projects",
   "version": "1.0.3",
-  "type": "module",
-  "exports": {
-    "./*": "./*"
-  },
-  "author": "Dmytro Zelenetskyi <dmytro.zelenetskyi@gmail.com>",
   "license": "MIT",
   "keywords": [
     "typescript",
@@ -14,19 +9,36 @@
     "react library tsconfig",
     "next.js tsconfig"
   ],
-  "devDependencies": {
-    "semantic-release": "^22.0.5"
+  "author": {
+    "name": "Dmytro Zelenetskyi",
+    "email": "dmytro.zelenetskyi@gmail.com",
+    "url": "https://codeandgin.co"
   },
-  "scripts": {
-    "semantic-release": "semantic-release --debug"
-  },
+  "homepage": "https://github.com/zemd/tsconfig",
   "repository": {
     "type": "git",
     "url": "https://github.com/zemd/tsconfig.git"
   },
-  "release": {
-    "branches": [
-      "main"
-    ]
-  }
+  "bugs": {
+    "url": "https://github.com/zemd/tsconfig/issues"
+  },
+  "files": [
+    "tsconfig-base.json",
+    "tsconfig-next.json",
+    "tsconfig-node.json",
+    "tsconfig-react.json"
+  ],
+  "funding": "https://github.com/sponsors/zemd",
+  "type": "module",
+  "exports": {
+    "./*": "./*"
+  },
+  "scripts": {
+    "release": "changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "semantic-release": "^22.0.5"
+  },
+  "packageManager": "bun@1.0.29"
 }

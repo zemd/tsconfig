@@ -3,6 +3,7 @@
   "display": "Node tsconfig",
   "extends": "./tsconfig-base.json",
   "compilerOptions": {
+    "lib": ["es2022"],
     "jsx": "react-jsx",
     "module": "NodeNext",
     "target": "ESNext",

@@ -3,10 +3,12 @@
   "display": "React Component Library tsconfig",
   "extends": "./tsconfig-base.json",
   "compilerOptions": {
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "jsx": "react-jsx",
     "module": "ESNext",
     "target": "ESNext",
-    "moduleResolution": "Node"
+    "moduleResolution": "Node",
+    "skipLibCheck": true
   },
   "include": ["**/*.ts", "**/*.tsx"]
 }
