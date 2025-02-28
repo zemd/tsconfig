@@ -4,7 +4,7 @@
   "extends": "./tsconfig-base.json",
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "moduleResolution": "Bundler",
     "module": "Preserve",
     "noEmit": true,
