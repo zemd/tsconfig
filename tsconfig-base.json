@@ -36,7 +36,9 @@
     "preserveWatchOutput": true,
     "assumeChangesOnlyAffectDirectDependencies": true,
     "verbatimModuleSyntax": true,
-    "moduleDetection": "force"
+    "moduleDetection": "force",
+    "erasableSyntaxOnly": true,
+    "libReplacement": false
   },
   "watchOptions": {
     "watchFile": "useFsEventsOnParentDirectory",
