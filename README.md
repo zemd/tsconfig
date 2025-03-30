@@ -1,5 +1,7 @@
 # Default tsconfigs
 
+[![npm](https://img.shields.io/npm/v/@zemd/tsconfig?color=0000ff&label=npm&labelColor=000)](https://npmjs.com/package/@zemd/tsconfig)
+
 - React component library
 - Next.js site
 
