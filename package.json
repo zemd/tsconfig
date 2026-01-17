@@ -38,6 +38,5 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.28.1"
-  },
-  "packageManager": "bun@1.2.5"
+  }
 }
