@@ -18,7 +18,6 @@
     "resolveJsonModule": true,
     "declaration": true,
     "declarationMap": true,
-    "downlevelIteration": false,
     "newLine": "lf",
     "removeComments": false,
     "sourceMap": true,
