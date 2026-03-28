@@ -1,5 +1,11 @@
 # @zemd/tsconfig
 
+## 1.6.0
+
+### Minor Changes
+
+- e97ecd4: Prepare for for the Typescript 7.0
+
 ## 1.5.0
 
 ### Minor Changes
