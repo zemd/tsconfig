@@ -3,11 +3,11 @@
   "display": "Node tsconfig",
   "extends": "./tsconfig-base.json",
   "compilerOptions": {
-    "lib": ["es2022"],
-    "jsx": "react-jsx",
+    "target": "ES2025",
+    "lib": ["ES2025"],
     "module": "NodeNext",
-    "target": "ESNext",
-    "moduleResolution": "NodeNext"
+    "moduleResolution": "NodeNext",
+    "types": ["node"]
   },
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": ["**/*.ts"]
 }
