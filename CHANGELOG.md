@@ -1,5 +1,11 @@
 # @zemd/tsconfig
 
+## 2.0.0
+
+### Major Changes
+
+- 7333478: Modernize tsconfig defaults, enable stricter checks, and bump to ES2025
+
 ## 1.6.0
 
 ### Minor Changes
