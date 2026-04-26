@@ -1,55 +1,144 @@
-# Default tsconfigs
+# @zemd/tsconfig
 
 [![npm](https://img.shields.io/npm/v/@zemd/tsconfig?color=0000ff&label=npm&labelColor=000)](https://npmjs.com/package/@zemd/tsconfig)
 
-- React component library
-- Next.js site
+Shared TypeScript configs with strict defaults for React libraries, Next.js apps, and Node.js projects.
 
-## Usage
+## Configs
 
-### Installation
+| Config                | Target | Module             | Key features             |
+| --------------------- | ------ | ------------------ | ------------------------ |
+| `tsconfig-react.json` | ESNext | ESNext (Bundler)   | JSX, DOM types           |
+| `tsconfig-next.json`  | ESNext | Preserve (Bundler) | Next.js plugin, `noEmit` |
+| `tsconfig-node.json`  | ES2025 | NodeNext           | Node.js types            |
+
+All configs extend `tsconfig-base.json` which enables `strict` mode, `verbatimModuleSyntax`, `isolatedDeclarations`, `erasableSyntaxOnly`, and other strict checks.
+
+## Install
 
 ```sh
 npm install @zemd/tsconfig --save-dev
 ```
 
-### React component library
+## Usage
+
+### React library
 
 ```json
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "My cool react library",
-  "extends": "@zemd/tsconfig/tsconfig-react.json"
+  "extends": "@zemd/tsconfig/tsconfig-react.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src"
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.test.tsx"]
 }
 ```
 
-### Next.js project
+### Next.js app
 
 ```json
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "My cool app configuration",
-  "extends": "@zemd/tsconfig/tsconfig-next.json"
+  "extends": "@zemd/tsconfig/tsconfig-next.json",
+  "include": ["next-env.d.ts", "src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules", ".next"]
 }
 ```
 
-### Warning
+### Node.js project
 
-Also, you have to set `compilerOptions.outDir`, `compilerOptions.rootDir`, and `compilerOptions.baseUrl` options explicitly, so it would be clear about target destinations. And keep in mind that `compilerOptions.outDir` is considered a relative path in Typescript, it must be defined within your tsconfig.
-
-## Next.js and Emotion.sh integration
-
-It is not limited by Emotion itself but showed up precisely when I was configuring it. Once you extend `tsconfnig-next.json`, a `css` attribute can't be used and the typechecker throws an error. You can fix it by adding `next-env.d.ts` into the `include` array:
-
+```json
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@zemd/tsconfig/tsconfig-node.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src"
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist", "**/*.test.ts"]
+}
 ```
-"include": [
-  "next-env.d.ts",
-  "**/*.ts",
-  "**/*.tsx"
-]
+
+### Monorepo
+
+In a monorepo, use a solution-style root `tsconfig.json` that references each package. Each package then extends the appropriate config and enables `composite` for project references.
+
+**Root `tsconfig.json`** — does not compile anything, only wires packages together:
+
+```json
+{
+  "files": [],
+  "references": [
+    { "path": "packages/ui" },
+    { "path": "packages/utils" },
+    { "path": "packages/web" }
+  ]
+}
 ```
 
-That means that `includes` field is also considered as relative paths in typescript.
+**`packages/ui/tsconfig.json`** — a React component library:
+
+```json
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@zemd/tsconfig/tsconfig-react.json",
+  "compilerOptions": {
+    "composite": true,
+    "outDir": "./dist",
+    "rootDir": "./src"
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules", "dist"],
+  "references": [
+    { "path": "../utils" }
+  ]
+}
+```
+
+**`packages/utils/tsconfig.json`** — a shared Node.js utility package:
+
+```json
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@zemd/tsconfig/tsconfig-node.json",
+  "compilerOptions": {
+    "composite": true,
+    "outDir": "./dist",
+    "rootDir": "./src"
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}
+```
+
+Then build the entire project graph with:
+
+```sh
+tsc --build
+```
+
+> **Tip:** The base config already enables `declaration`, `declarationMap`, and `isolatedDeclarations` — which means fast, parallelizable declaration emit and full cross-package IDE navigation out of the box.
+
+## Compatibility
+
+These configs target the **latest LTS Node.js** (currently **Node.js 24**) and are designed for **TypeScript 6.0**+, with the latest versions of **React** and **Next.js** in mind. If you're on an older Node.js or TypeScript version, you may need to adjust `target`, `module`, or `lib` settings in your own `tsconfig.json`.
+
+## Notes
+
+- You must set `outDir` and `rootDir` yourself - TypeScript treats these as relative paths, so they should live in your own `tsconfig.json`.
+- When extending `tsconfig-next.json`, make sure `next-env.d.ts` is in the `include` array (it is by default). If you override `include`, add it back manually.
+- The base config includes `watchOptions` that uses `useFsEventsOnParentDirectory` and excludes `**/node_modules`, `dist`, and `tmp` directories. To extend or override, add your own `watchOptions` in your `tsconfig.json`:
+  ```json
+  {
+    "watchOptions": {
+      "excludeDirectories": ["**/node_modules", "dist", "tmp", ".next"]
+    }
+  }
+  ```
 
 ## License
 
